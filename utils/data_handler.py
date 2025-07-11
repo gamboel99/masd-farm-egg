@@ -1,5 +1,9 @@
-def save_data(file_path, new_data):
-    # Menyimpan data baru ke file CSV, otomatis menambahkan jika file sudah ada.
+import pandas as pd
+import os
 
-def load_data(file_path):
-    # Membaca file CSV, atau mengembalikan DataFrame kosong jika belum ada.
+def save_data(filepath, data_dict):
+    df = pd.DataFrame([data_dict])
+    if os.path.exists(filepath):
+        df_existing = pd.read_csv(filepath)
+        df = pd.concat([df_existing, df], ignore_index=True)
+    df.to_csv(filepath, index=False)

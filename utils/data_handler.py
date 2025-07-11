@@ -1,6 +1,17 @@
+import os
+import pandas as pd
 def export_to_excel(df_pakan, df_jual, biaya_pakan, pendapatan, laba):
     import xlsxwriter
     from io import BytesIO
+
+    ef save_data(filepath, new_data):
+    # Jika file belum ada, buat file baru dengan data awal
+    if not os.path.exists(filepath):
+        df = pd.DataFrame([new_data])
+    else:
+        df = pd.read_csv(filepath)
+        df = pd.concat([df, pd.DataFrame([new_data])], ignore_index=True)
+    df.to_csv(filepath, index=False)
 
     output = BytesIO()
     writer = pd.ExcelWriter(output, engine='xlsxwriter')

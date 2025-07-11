@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 from datetime import datetime
-from utils import data_handler  # Modul untuk simpan & load data
+from utils import data_handler
 
 # Konfigurasi halaman
 st.set_page_config(page_title="Mas D Farm Egg", layout="wide")

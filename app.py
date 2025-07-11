@@ -1,9 +1,12 @@
-cd masd-farm-egg
 import streamlit as st
 import pandas as pd
 import os
+import sys
 from datetime import datetime
-from utils import data_handler
+
+# Tambahkan path agar bisa impor dari folder utils
+sys.path.append(os.path.join(os.path.dirname(__file__), 'utils'))
+import data_handler  # Jangan pakai "from utils import ..." agar lebih aman lintas lingkungan
 
 # Konfigurasi halaman
 st.set_page_config(page_title="Mas D Farm Egg", layout="wide")
@@ -86,8 +89,8 @@ if menu == "Input Data":
             st.success("✅ Data penjualan berhasil disimpan.")
 
 # ============================
-# BAGIAN ANALISIS & LAPORAN (Placeholder)
+# BAGIAN ANALISIS & LAPORAN
 # ============================
 elif menu == "Analisis & Laporan":
     st.subheader("📊 Analisis & Laporan Keuangan")
-    st.info("Fitur ini akan menampilkan ringkasan produksi, penggunaan pakan, pendapatan, serta estimasi Break Even Point (BEP). Akan dibuat setelah input data selesai.")
+    st.info("Fitur analisis, laporan produksi, pendapatan, dan estimasi BEP akan ditambahkan.")

@@ -67,4 +67,4 @@ if menu == "Input Data":
 
 elif menu == "Analisis & Laporan":
     st.subheader("📊 Analisis & Laporan Keuangan")
-    st.info("Fitur ini akan menampilk
+    st.info("Fitur ini akan menampilkan ringkasan produksi, penggunaan pakan, pendapatan, serta estimasi Break Even Point (BEP).")

@@ -1,8 +1,15 @@
 import streamlit as st
 import pandas as pd
 import os
-import sys
 from datetime import datetime
+
+# Pastikan utils bisa diimpor
+try:
+    from utils import data_handler
+except ModuleNotFoundError:
+    import sys
+    sys.path.append(os.path.join(os.path.dirname(__file__), 'utils'))
+    import data_handler
 
 # Tambahkan path agar bisa impor dari folder utils
 sys.path.append(os.path.join(os.path.dirname(__file__), 'utils'))

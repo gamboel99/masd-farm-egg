@@ -1,3 +1,4 @@
+cd masd-farm-egg
 import streamlit as st
 import pandas as pd
 import os
